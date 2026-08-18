@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1</title>
+</head>
+
+<body>
+    <script>
+        //         const name = "Ayush";
+        //         const age = 20;
+        //         const college = "DGI";
+        //         const branch = "CSE";
+        //         const isStudent = true;
+
+        //         console.log(`Hi, I am ${name}. 
+        // I am ${age} years old.
+        // I study at ${college} in the 
+        // ${branch} AIML branch.
+        // I am a student: ${isStudent}`);
+
+
+        // const name = "Ayush";
+        // const role = "Full Stack Developer";
+        // const skills = ["HTML", "CSS", "JavaScript", "Python", "Django"];
+        // const projects = ["Portfolio Website", "E-commerce Platform", "Blog Application"];
+        // const github = "https://github.com/Ayush2809-tech";
+        // const isavailable = true;
+
+        // console.log(`
+        // ========================================
+        // Developer Profile 
+        // =========================================
+        // Name: ${name}
+        // Role: ${role}
+        // Skills: ${skills.join(", ")}
+        // Projects: ${projects.join(", ")}
+        // GitHub: ${github}
+        // Available: ${isavailable}
+        // `);
+        
+        // console.log(skills[0]);
+        // console.log(skills[2]);
+        // console.log(skills.length);
+        // skills.push("React");
+        // console.log(skills);
+
+        // const age = 20;
+        // if (age>=18){
+        //     console.log("Adult");
+        // }else{
+        //     console.log("Minor");
+        // }
+
+        // const isLoggedIn = true;
+        // if (isLoggedIn) {
+        //     console.log("Welcome back!");
+        // } else {
+        //     console.log("Please login first.");
+        // }
+
+        // const age = 20;
+        // const hasID = true;
+        // if (age >= 18 && hasID) {
+        //     console.log("You are allowed to enter.");
+        // } else {
+        //     console.log("You are not allowed to enter.");
+        // }
+
+        // const hasGitHub = true;
+        // const hasLinkedIn = false;
+        // if (hasGitHub || hasLinkedIn) {
+        //     console.log("Developer profile found.");
+        // } else {
+        //     console.log("No developer profile found.");
+        // }
+
+        // const isAvailable = true;
+        // if (!isAvailable) {
+        //     console.log("Currently unavailable.");
+        // } else {
+        //     console.log("Available for work.");
+        // }
+
+
+        function greet(name){
+            console.log(`hello ${name}`);
+        }
+        greet("Ayush");
+
+        function add(a, b){
+            return a + b;
+        }
+        const result = add(10, 20);
+        console.log(result);
+
+
+        function checkAge(age){
+            if (age >= 18){
+                return "Adult";
+            }else{
+                return "Minor";
+            }
+        }
+        console.log(checkAge(20));
+        console.log(checkAge(15));
+
+
+        function createProfile(name, role, projects){
+            return (
+                `My name is ${name}.
+I am a ${role}.
+I have built ${projects}.`
+                )
+        }
+        console.log(createProfile("Ayush", "Full Stack Developer", 5));
+
+
+        const square = (x) => x * x;
+        console.log(square(5));
+
+
+
+
+    </script>
+</body>
+
+</html>

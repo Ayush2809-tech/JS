@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form action="" id="contactForm">
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <br>
+        <br>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="formMessage"></p>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const nameInput = document.getElementById("nameInput");
+        const emailInput = document.getElementById("emailInput");
+        const formMessage = document.getElementById("formMessage");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = nameInput.value;
+            const email = emailInput.value;
+
+            if (name === "" || email === "") {
+                formMessage.textContent = "Please fill all fields.";
+            } else {
+                formMessage.textContent = `form submitted successfully!!
+                Welcome ${name}! Your Email is ${email}`;
+            }
+            console.log(name);
+            console.log(email);
+
+        });
+    </script>
+</body>
+
+</html>

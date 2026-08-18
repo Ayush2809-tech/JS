@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+</head>
+<body>
+    <script>
+        const name = "Ayush";
+        const role = "Full Stack Developer";
+        const isAvailable = true;
+        const skills = ["HTML", "CSS", "JavaScript", "Python", "Django", "Bootstrap"];
+        const projects =["Portfolio Website","Aurelix: SMS", "Weather App"];
+        
+        function getAvailability() {
+            if (isAvailable) {
+                return "I am available for work.";
+            } else {
+                return "I am currently unavailable for work.";
+            }
+        }
+
+        function createProfile(){
+            return (`===============================
+            Developer Profile
+            ================================
+            Name : ${name}
+            Role : ${role}
+            Skills: ${skills.join(", ")}
+            Projects: ${projects.join(", ")}
+            Status : ${getAvailability()}`);
+        }
+        console.log(createProfile());
+
+    </script>
+</body>
+</html>

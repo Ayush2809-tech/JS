@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Practice</title>
+</head>
+
+<body>
+    <script>
+        const developer = {
+            name: "Ayush Saxena",
+            role: "Full Stack Developer",
+            college: "DGI",
+            branch: "CSE - AIML",
+            skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+            isAvailable: true,
+            greet: function () {
+                console.log(`Hello, my name is ${this.name}. I am a ${this.role} and I studied at ${this.college} in the ${this.branch} branch.`);
+            },
+        }
+        developer.greet();
+
+        console.log(developer.name);
+        console.log(developer.role);
+        console.log(developer.skills[0]);
+        console.log(developer.isAvailable);
+
+        //task 1
+
+        developer.skills.forEach(skill => console.log(skill));
+
+        //task 2
+        const numbers = [10, 20, 30, 40, 50];
+
+        numbers.forEach((number, index) => {
+            console.log(`Index: ${index}, Value: ${number}`);
+        });
+
+        numbers.forEach(number => console.log(number));
+
+        //Task 3
+        developer.skills.forEach(skill => console.log(`I know ${skill}`));
+
+        //practice 3
+
+        //task 1
+        const numbers1 = [1, 2, 3, 4, 5];
+
+        const square = numbers1.map(number => {
+            return number * number;
+        });
+        console.log(square);
+
+        //task 2
+        const Skills = ["HTML", "CSS", "JavaScript", "React", "Node.js"];
+        const skillMessages = Skills.map(skill => `I know ${skill}`);
+        console.log(skillMessages);
+
+        //task 3
+        const projects = ["Portfolio", "Weather App", "E-commerce Website"];
+
+        const projectMessages = projects.map(project => `Project: ${project}`);
+        console.log(projectMessages);
+
+
+        //-------------------filter ----------------------
+        // task 1
+        const no = [10, 15, 20, 25, 30, 35, 40];
+        const evenno = no.filter(no => no % 2 === 0);
+        console.log(evenno);
+
+        //task 2
+        const users = [
+            { name: "Ayush", age: 20 },
+            { name: "Rahul", age: 16 },
+            { name: "Aman", age: 22 },
+            { name: "Riya", age: 17 }
+        ];
+        const usersAbove18 = users.filter(user => user.age >= 18);
+        console.log(usersAbove18);
+
+        //task 3
+        const projects1 = [
+            { title: "Portfolio", tech: "React" },
+            { title: "Weather App", tech: "JavaScript" },
+            { title: "Dashboard", tech: "React" },
+            { title: "Admission System", tech: "Django" }
+        ];
+        const reactProjects = projects1.filter(project => project.tech === "React");
+        console.log(reactProjects);
+
+
+        //task 4
+        const projects2 = [
+            { title: "Portfolio", tech: "React" },
+            { title: "Weather App", tech: "JavaScript" },
+            { title: "Dashboard", tech: "React" },
+            { title: "Admission System", tech: "Django" }
+        ];
+        const reactProjects2 = projects2.filter(project => project.tech === "React");
+        const reactProjectTitles = reactProjects2.map(project => `React Project: ${project.title}`);
+        console.log(reactProjectTitles);
+
+        const project = projects2.find(projects2 => projects2.tech === "React");
+        console.log(project);
+
+        const project1 = projects2
+            .find(projects2 => projects2.title === "Weather App");
+        console.log(project1);
+
+
+        //--------------------- Destructing --------------------
+        //task 1
+        const developer1 = {
+            name: "Ayush",
+            role: "Full Stack Developer",
+            college: "DGI",
+            branch: "CSE-AIML"
+        };
+        const { name, role, college, branch } = developer1;
+        console.log(name);
+        console.log(role);
+        console.log(college);
+        console.log(branch);
+
+        //task 2
+        const skills2 = ["HTML", "CSS", "JavaScript", "React", "Node.js"];
+        const [i, j, l, m, n] = skills2;
+        console.log(i);
+        console.log(j);
+        console.log(l);
+
+        //task 3
+        const project3 = {
+            title: "Portfolio",
+            tech: "React",
+            type: "Frontend"
+        };
+
+        const { title, tech, type } = project3;
+        console.log(title);
+        console.log(`Built with ${tech}`);
+
+
+//------------------Spread-------------------------
+        //task 1
+        const frontend = ["HTML", "CSS"];
+        const backend = ["Django", "Python"];
+        const allSkills = [...frontend, ...backend];
+        console.log(allSkills);
+
+        //task 2
+        const personal = {
+            name: "Ayush",
+            age: 20
+        };
+
+        const professional = {
+            role: "Full Stack Developer",
+            college: "DGI"
+        };
+
+        const profile = {
+            ...personal,
+            ...professional
+        };
+        console.log(profile);
+
+        //task 3
+
+        const skills = ["HTML", "CSS", "JavaScript"];
+        const updatedSkills = [...skills, "React"];
+        console.log(updatedSkills);
+
+
+        //---------------Rest--------------
+        //task 1
+        function showSkills(...skills){
+            console.log("Skills:", skills);
+        }
+        showSkills("HTML", "CSS", "JavaScript", "React");
+
+        //task 2
+        function calculateSum(...numbers) {
+            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+            console.log("Sum:", sum);
+        }
+        calculateSum(10, 20, 30, 40, 50);
+
+        //task 3
+        function createProfile(...details) {
+            const [name,role, age, skills] = details;
+            console.log("Profile:", { name, role, age, skills });
+        }
+        createProfile("Ayush", "Full Stack Developer", 20, "React");
+
+    </script>
+
+</body>
+
+</html>

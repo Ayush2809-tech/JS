@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Developer Portfolio Data</title>
+</head>
+
+<body>
+    <script>
+        const projects = [
+            {
+                title: "Portfolio",
+                tech: "React",
+                type: "Frontend",
+                featured: true
+            },
+            {
+                title: "Admission System",
+                tech: "Django",
+                type: "Full Stack",
+                featured: true
+            },
+            {
+                title: "Weather App",
+                tech: "JavaScript",
+                type: "Frontend",
+                featured: false
+            },
+            {
+                title: "Calculator",
+                tech: "JavaScript",
+                type: "Frontend",
+                featured: false
+            }
+        ];
+
+        //task 1
+        const trueFeatured = projects.filter(project => project.featured);
+        console.log(trueFeatured);
+
+        //task 2
+        const task2 = projects.map(projects => `Project: ${projects.title} - ${projects.tech}`);
+        console.log(task2);
+
+        //task 3
+        const task3 = projects.find(projects => projects.tech === "React");
+        console.log(task3);
+
+        //task 4
+
+        const task4 = projects.map(({ title }) => title);
+        console.log(task4);
+
+        const updatedProjects = [
+            ...projects,
+            {
+                title: "Todo App",
+                tech: "JavaScript",
+                type: "Frontend",
+                featured: false
+            }
+        ];
+
+        console.log(updatedProjects);
+    </script>
+</body>
+
+</html>

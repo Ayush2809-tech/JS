@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day3</title>
+</head>
+
+<body>
+    <h1 id="title"> My Developer Portfolio</h1>
+
+    <p id="description">I am learning JS</p>
+
+    <button id="changeBtn">Change Content</button>
+
+
+    <!-- //------------------------- -->
+
+    <input id="nameInput" type="text" placeholder="Enter your name">
+    <button id="greetBtn">Say Hello</button>
+
+    <h2 id="message"></h2>
+
+    <script>
+        //task1 
+
+        const title = document.getElementById("title");
+        const description = document.getElementById("description");
+        const changeBtn = document.getElementById("changeBtn");
+
+
+        //task 2
+        title.textContent = "Ayush - Fullstack Developer";
+        console.log(title);
+
+        //task 3
+        description.textContent = "I build modern web applications";
+        console.log(description);
+
+        // task 4
+        changeBtn.addEventListener("click", () => {
+            title.textContent = "Ayush | Full Stack Developer";
+            description.textContent = "Building modern web applications with js.";
+            console.log(changeBtn);
+        });
+
+        const input = document.getElementById("nameInput");
+        const btn = document.getElementById("greetBtn");
+        const msg = document.getElementById("message");
+
+        btn.addEventListener("click", () => {
+            const ip = input.value;
+            msg.textContent = `Hello, ${ip}! 👋`;
+            console.log(msg);
+        });
+
+    </script>
+
+
+</body>
+
+</html>
