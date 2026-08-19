@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5</title>
+</head>
+
+<body>
+    <script>
+        localStorage.setItem("developer", "Ayush");
+        localStorage.getItem("developer");
+
+        localStorage.removeItem("developer");
+
+
+        const skills = ["HTML", "CSS", "JavaScript"];
+
+        localStorage.setItem(
+            "skills",
+            JSON.stringify(skills)
+        );
+
+
+        const savedSkills = JSON.parse(
+            localStorage.getItem("skills")
+        );
+
+        console.log(savedSkills);
+    </script>
+</body>
+
+</html>
