@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day10</title>
+</head>
+
+<body>
+    <script>
+        console.log("Start");
+        setTimeout(() => {
+            console.log("Middle");
+        }, 3000);
+        console.log("End");
+
+
+        //callback function : ek function jo hum kisi doosre function ko argument ke roop mein dete hain, taaki baad mein execute ho.
+
+        function greet(name, callback) {
+            console.log(`Hello, ${name}!`);
+            callback();
+        }
+        function done() {
+            console.log("Done!");
+        }
+        greet("Ayush", done);
+
+
+        //task 2
+
+        function processUser(name, callback) {
+            console.log("Processing " + name);
+            callback();
+        }
+
+        function completed() {
+            console.log("User processed");
+        }
+
+        processUser("Ayush", completed);
+
+
+
+        // real callback use
+
+        function processUser(name, callback) {
+            console.log("Processing " + name);
+
+            setTimeout(() => {
+                console.log("Processing complete");
+                callback();
+            }, 2000);
+        }
+
+        function completed() {
+            console.log("User processed");
+        }
+
+        processUser("Ayush", completed);
+
+        // call back se problem create hoti h so next topic
+        // Promises : ek object jo future mein kisi asynchronous operation ke result ko represent karta hai. Ye ya to resolve hoga ya reject hoga.
+
+        //task 3 
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Data received");
+            }, 2000);
+        });
+
+        promise.then(result =>
+            console.log(result));
+
+
+        //task 4
+
+        const promise2 = new Promise((resolve, reject) => {
+            let success = true;
+            setTimeout(() => {
+                if (success) {
+                    resolve("Data Loaded");
+                } else {
+                    reject("Failed to load data");
+                }
+            }, 2000);
+        });
+
+        promise2
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+
+
+        // Async / Await : ek syntax jo asynchronous code ko synchronous code ki tarah likhne mein madad karta hai. Ye promises ke upar kaam karta hai.
+
+        //task5
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data received");
+                }, 2000);
+            });
+        }
+
+        async function loadData() {
+            const data = await getData();
+            console.log(data);
+        }
+
+        loadData();
+
+        //task 6
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data loaded successfully");
+                }, 2000);
+            });
+        }
+
+        async function loadData() {
+            try {
+                const data = await getData();
+                console.log(data);
+            } catch (error) {
+                console.log("Error:", error);
+            }
+        }
+
+        loadData();
+
+
+        // task 7
+
+        function getData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data loaded successfully");
+                }, 2000);
+            });
+        }
+
+        async function loadData() {
+
+            console.log("Loading data...");
+
+            try {
+                const data = await getData();
+                console.log(data);
+            } catch (error) {
+                console.log("Error:", error + "Failed to load data");
+            }
+        }
+
+        loadData();
+
+
+        //tassk 8
+
+        function fetchUser() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({
+                        name: "Ayush",
+                        role: "Full Stack Developer"
+                    });
+                }, 2000);
+            });
+        }
+
+        async function loadUser() {
+            console.log("Loading user...");
+
+            try {
+                const user = await fetchUser();
+
+                console.log("Name:", user.name);
+                console.log("Role:", user.role);
+            } catch (error) {
+                console.log("Error:", error);
+            }
+        }
+
+        loadUser();
+
+
+        // mini task final 
+        function fetchUser() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({
+                        name: "Ayush",
+                        email: "ayush@example.com",
+                        role: "Developer"
+                    });
+                }, 2000);
+            });
+        }
+
+        async function loadUser() {
+            console.log("Loading user...");
+
+            try {
+                const user = await fetchUser();
+
+                console.log("Name:", user.name);
+                console.log("Email:", user.email);
+                console.log("Role:", user.role);
+            } catch (error) {
+                console.log("Failed to load user");
+            }
+        }
+
+        loadUser();
+
+
+    </script>
+</body>
+
+</html>
